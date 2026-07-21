@@ -1,0 +1,21 @@
+# Compiled binaries and object files
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+nanollm_editor
+
+# Build directory / configs
+.config/
+nanollm_editor.app/
+
+# macOS / OS files
+.DS_Store
+.apple/
+
+# IDE / Text Editor settings
+.vscode/
+.idea/
+*.swp
+*~
