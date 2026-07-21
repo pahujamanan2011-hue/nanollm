@@ -1,7 +1,7 @@
 # Makefile for NanoLLM Editor
 CC = gcc
-CFLAGS = -Wall -O2 -std=c99 `pkg-config --cflags gtk+-3.0`
-LDFLAGS = `pkg-config --libs gtk+-3.0` -lcurl -lpthread
+CFLAGS = -Wall -Wextra -O2 -std=gnu99 $(shell pkg-config --cflags gtk+-3.0 libcurl)
+LDFLAGS = $(shell pkg-config --libs gtk+-3.0 libcurl) -lpthread
 
 TARGET = nanollm_editor
 
@@ -18,7 +18,8 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
 
-%.o: %.c
+# Track headers so changing nanollm.h or cJSON.h triggers a re-compile
+%.o: %.c nanollm.h cJSON.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
