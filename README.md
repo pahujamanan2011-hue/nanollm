@@ -30,7 +30,7 @@ If you prefer to set up and compile the project manually, follow these steps:
 ### Step 1: Clone the Repository
 Open your terminal and clone the source code:
 ```bash
-git clone [https://github.com/your-username/nanollm.git](https://github.com/your-username/nanollm.git)
+git clone https://github.com/pahujamanan2011-hue/nanollm.git
 cd nanollm
 
 ```
